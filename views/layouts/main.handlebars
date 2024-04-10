@@ -16,9 +16,15 @@
         <a href="/">My Tech Blog</a>
       </h1>
       <nav>
+        {{#if logged_in}}
         <a href="/">Home</a> |
         <a href="/profile">Dashboard</a> |
         <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a href="/">Home</a> |
+        <a href="/profile">Dashboard</a> |
+        <button class="no-button" id="login">Login</button>
+        {{/if}}
       </nav>
     </header>
     <main class="container container-fluid mt-5">
