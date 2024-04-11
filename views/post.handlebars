@@ -2,4 +2,13 @@
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  {{#if comments.length}}
+  <ul>Comments:</ul>
+  {{#each comments as |comment|}}
+  <li>{{comment.user}}: '{{comment.content}}' at {{format_date comment.date_created}}</li>
+  {{/each}}
+  {{/if}}
+</div>
+<div>
+<button class="btn btn-primary" type="submit">Leave a Comment</button>
 </div>
