@@ -8,6 +8,8 @@ class User extends Model {
   }
 }
 
+// model for users, which will be populated when a new user signs up
+// user will provide their name, email, and password, the rest is populated automatically
 User.init(
   {
     id: {
@@ -37,6 +39,7 @@ User.init(
     },
   },
   {
+    // hooks that hash the user's password to encrypt it
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);

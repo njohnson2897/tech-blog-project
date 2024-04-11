@@ -3,6 +3,9 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
+// haven't gotten around to utilizing this model yet but it is the model for comments left under posts
+// users will only populate the content of the comment, the rest will populate automatically through default settings
+// ...or by the BlogPost or user that it is attached to
 Comment.init(
     {
         id: {

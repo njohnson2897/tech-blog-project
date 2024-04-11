@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { BlogPost } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// route to create a new blog post
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await BlogPost.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// route to delete a specific blog post
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await BlogPost.destroy({
@@ -23,7 +25,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-
+// will send error if the id of the specified post cannot be found for deletion
     if (!postData) {
       res.status(404).json({ message: 'No post found with this id!' });
       return;

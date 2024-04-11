@@ -30,6 +30,7 @@ const sess = {
   })
 };
 
+// uses custom properties set above
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
@@ -39,6 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// uses modular routes creates in controllers directory
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

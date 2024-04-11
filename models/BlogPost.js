@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 class BlogPost extends Model {}
 
+// model for BlogPosts table, posts will have title and content populated by user
+// the rest will populate automatically
 BlogPost.init(
     {
         id: {

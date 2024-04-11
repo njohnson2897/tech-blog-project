@@ -1,3 +1,4 @@
+{{!-- template for users' individual dashboards where they can see all of their previous posts --}}
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
@@ -7,15 +8,18 @@
 <div class="row mt-4">
   <div class="col-md-6">
   <div class="col-md-6 post-list">
+{{!-- will only render posts if there are any --}}
     {{#if BlogPosts.length}}
     <h3>My Posts:</h3>
 
+{{!-- iterates over BlogPosts array and renders each post --}}
     {{#each BlogPosts as |post|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
       </div>
       <div class="col-md-4">
+ {{!-- options to delete or update posts, although the update button currently has no functionality--}}
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>
         <button class="btn btn-sm btn-primary">Update</button>
       </div>
@@ -23,6 +27,7 @@
     {{/each}}
      {{/if}}
   </div>
+  {{!-- form to create new posts that will automatically populate above --}}
   <h4>Create a New Post:</h4>
     <form class="form new-post-form">
       <div class="form-group">
