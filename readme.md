@@ -27,6 +27,6 @@ N/A
 N/A
 
 ## Credits
-The module 14 mini project is heavily referenced throughout the project, as I did not have enough time to truly build this project from scratch.
+The module 14 mini project is heavily referenced throughout the project
 
 Additionally, I received a lot of help from Jaytee Padilla, a tutor through the bootcamp, who helped me tremendously in the debugging process of what I had already created.  
